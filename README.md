@@ -9,23 +9,13 @@ Docker
 <br>
 <br>
 
-- [VS Code Docker Extension Nedir?](#vs-code-docker-extension-nedir)
-- [VS Code YAML Extension Nedir?](#vs-code-yaml-extension-nedir)
+- [Docker Nedir?](#docker-nedir)
 
 <br>
 <br>
 
-## VS Code Docker Extension Nedir?
+## Docker Nedir?
 
 <br>
 
-Container oluşturma, başlatma, durdurma, yeniden başlatma ve kaldırma gibi temel Docker görevlerini basitleştirir. Bu sayede Docker ortamında çalışırken daha hızlı ve verimli olmanızı sağlar.
-
-<br>
-<br>
-
-## VS Code YAML Extension Nedir?
-
-<br>
-
-YAML dosyalarını düzenleme ve analiz etme sürecini kolaylaştıran bir eklentidir. Renklendirme, otomatik tamamlama ve hata ayıklama gibi özellikler sunarak YAML dosyalarını daha verimli bir şekilde yönetmenize olanak tanır. Bu sayede yapılandırma dosyalarınızı daha hızlı ve hatasız bir şekilde oluşturabilirsiniz.
+Docker, uygulamaların geliştirilmesini, test edilmesini ve dağıtılmasını kolaylaştıran açık kaynaklı bir platformdur. Docker, yazılım konteynerleştirme teknolojisine dayanır. Bu teknoloji, yazılım uygulamalarını bağımsız ve taşınabilir bir ortamda çalıştırmayı sağlar. Docker'ın temel amacı, uygulamaların her yerde tutarlı bir şekilde çalışmasını sağlamaktır.
