@@ -1,0 +1,58 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: devops
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    volumes:
+      - ./blogdata/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - blognet
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./blogdata/wordpress:/var/www/html
+    networks:
+      - blognet
+
+  nginx:
+    image: linuxserver/letsencrypt:latest
+    container_name: nginx
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PGID=1000
+      - PUID=1000
+      - TZ=Europe/London
+      - URL=blog.caglargokcen.com
+      - VALIDATION=http
+    volumes:
+      - ./blogdata/nginx:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - blognet
+
+networks:
+  blognet:
+    driver: bridge
